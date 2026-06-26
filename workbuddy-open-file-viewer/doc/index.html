@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Open File Viewer - 文件预览管理器" />
+    <title>文件预览管理器</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Header / Search Bar -->
+      <header class="header">
+        <div class="header-title">📁 文件预览管理器</div>
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="搜索文件..." />
+        </div>
+        <div class="header-actions">
+          <button class="header-btn" id="theme-toggle" title="切换主题">🌙</button>
+          <button class="header-btn" id="upload-btn">📤 上传文件</button>
+          <input type="file" id="file-input" class="upload-input" />
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Sidebar / File Tree -->
+        <aside id="sidebar">
+          <div class="sidebar-header">
+            <span class="sidebar-title">文件列表</span>
+            <button id="sidebar-toggle">◀</button>
+          </div>
+          <div class="file-tree-container">
+            <div id="file-tree"></div>
+          </div>
+        </aside>
+
+        <!-- Preview Area -->
+        <section class="preview-area">
+          <div class="preview-toolbar">
+            <div class="preview-toolbar-info">
+              <div id="file-info">
+                <span style="color: var(--text-secondary)">选择文件进行预览</span>
+              </div>
+            </div>
+          </div>
+          <div id="preview-container">
+            <div class="empty-state">
+              <div class="empty-state-icon">📂</div>
+              <div class="empty-state-text">
+                从左侧文件列表选择文件，或上传新文件进行预览
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
